@@ -2,8 +2,7 @@ import moment from 'moment';
 
 import { Status } from './types';
 
-
-export class WorkloadService {
+class WorkloadService {
 
   private workLoads: { [key in number]: Work } = {};
   private counter = 0;
@@ -65,3 +64,6 @@ interface Work {
   status: Status;
   timer: NodeJS.Timeout;
 }
+
+const service = new WorkloadService();
+export {WorkloadService, service}

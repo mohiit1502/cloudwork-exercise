@@ -31,13 +31,13 @@ class WorkloadForm extends React.PureComponent<WorkloadFormProps, WorkloadFormSt
   render() {
     return (
       <form>
-        <h2>Create workload</h2>
+        <h2 className="form-header mb-5">Create workload</h2>
         
         <div>
-          <label>
-            Complexity: {this.state.complexity}
-            <br />
+          <label className="d-block w-100">
+            <span className="mb-2 d-block">Complexity: {this.state.complexity}</span>
             <input 
+              className="w-100"
               value={this.state.complexity} 
               onChange={(e) => this.setState({ complexity: Number(e.target.value) })} 
               type="range" 

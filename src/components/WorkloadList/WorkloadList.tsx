@@ -12,6 +12,7 @@ export interface WorkloadListStateProps {
 
 export interface WorkloadListDispatchProps {
   cancelWorkload: (id: number) => void;
+  nowHandler: () => number;
 }
 
 export interface WorkloadListProps extends 
@@ -19,19 +20,19 @@ export interface WorkloadListProps extends
   WorkloadListDispatchProps {}
 
 
-const WorkloadList: React.SFC<WorkloadListProps> = ({ workloads, cancelWorkload }) => (
+const WorkloadList: React.SFC<WorkloadListProps> = ({ workloads, cancelWorkload, nowHandler }) => (
   !workloads.length 
     ? (
       <span>No workloads to display</span>
     )
   : (
-    <ol>
+    <ul className="list-unstyled">
       {workloads.map((workload) => (
         <li key={workload.id}>
-          <WorkloadItem {...workload} onCancel={() => cancelWorkload(workload.id)} />
+          <WorkloadItem {...workload} onCancel={() => cancelWorkload(workload.id)} nowHandler={nowHandler} />
         </li>
       ))}
-    </ol>
+    </ul>
   )
 );
 
@@ -40,7 +41,7 @@ const mapStateToProps = (state: RootState): WorkloadListStateProps => ({
   workloads: Object.values(state.workloads),
 });
 
-const mapDispatchToProps = (dispatch: Dispatch<RootAction>): WorkloadListDispatchProps => ({
+const mapDispatchToProps = (dispatch: Dispatch<RootAction>) => ({
   cancelWorkload: (id: number) => dispatch(cancel({ id })),
 }) 
 

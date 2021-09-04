@@ -6,21 +6,22 @@ import './App.css';
 
 
 class App extends PureComponent {
+
+  nowHandler () : number {
+    return Date.now();
+  }
+
   render() {
     return (
-      <div>
-        <h1>CloudWork</h1>
-        <hr />
-        
-        <div >
-          <WorkloadFormContainer />
-        </div>
-        <hr />
-
-        <div>
-          <h2>Workloads</h2>
-          <WorkloadListContainer />
-        </div>
+      <div className="app-root container mt-5 pt-5 d-flex flex-column">
+        <h1 className="header">CloudWork</h1>
+        <div className="d-flex flex-row-reverse mt-5">
+          <div className="form-container border p-5" style={{flex: 2}}><WorkloadFormContainer /></div>
+          <div className="list-container" style={{flex: 5}}>
+            <h2 className="mb-3">Workloads</h2>
+            <WorkloadListContainer nowHandler={this.nowHandler}/>
+          </div>
+        </div>        
       </div>
     );
   }

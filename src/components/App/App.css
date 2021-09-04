@@ -1,1 +1,71 @@
 /* .App {} */
+
+.app-root {
+    color: rgb(82, 1, 245);
+}
+
+.header {
+    padding-bottom: 2rem;
+    border-bottom: 3px solid rgb(82, 1, 245)
+}
+
+.border {
+    border: 3px solid rgb(82, 1, 245) !important;
+}
+
+button {
+    background-color: rgb(82, 1, 245);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    margin-top: 3rem;
+}
+
+.form-container {
+    margin-top: 3.375rem;
+    max-height: 21rem;
+}
+
+.list-container {
+    margin-right: 5rem;
+}
+
+input[type=range]{
+    -webkit-appearance: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 300px;
+    height: 5px;
+    background: rgb(82, 1, 245);
+    border: none;
+    border-radius: 3px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 16px;
+    width: 16px;
+    /* border-radius: 50%; */
+    background: rgb(82, 1, 245);
+    margin-top: -4px;
+}
+
+input[type=range]:focus {
+    outline: none;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+    background: rgb(82, 1, 245);
+}
+
+.primary-details {
+    margin-right: auto;
+}
+
+.WorkloadItem-secondaryButton {
+    margin-left: 1.5rem;
+    background: rgb(82, 1, 245, 0.4);
+    color: rgb(82, 1, 245);
+}
